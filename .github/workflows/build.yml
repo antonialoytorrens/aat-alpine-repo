@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - master
+      - custom
 jobs:
   build:
     strategy:
@@ -10,7 +10,7 @@ jobs:
         arch: [x86_64, x86, aarch64, armv7, ppc64le, s390x]
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@custom
       - env:
           DEPLOYKEY: ${{ secrets.DEPLOYKEY }}
           PRIVKEY: ${{ secrets.PRIVKEY }}
